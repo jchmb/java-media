@@ -1,0 +1,9 @@
+nl.jchmb.media.adapter
+nl.jchmb.media.article
+nl.jchmb.media.category
+nl.jchmb.media.data
+nl.jchmb.media.entity
+nl.jchmb.media.fetcher
+nl.jchmb.media.fetcher.exception
+nl.jchmb.media.query.constraint
+nl.jchmb.media.query.filter
