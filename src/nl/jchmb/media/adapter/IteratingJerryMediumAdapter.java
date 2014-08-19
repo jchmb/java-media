@@ -16,7 +16,9 @@ public abstract class IteratingJerryMediumAdapter<T extends Entity> extends Jerr
 	protected Collection<Data> getDataCollection(Jerry doc) throws MediumAdapterException {
 		Collection<Data> dataCollection = new ArrayList<Data>();
 		for (Jerry element : doc.$(getSelector())) {
-			dataCollection.add(getData(element));
+			try {
+				dataCollection.add(getData(element));
+			} catch (MediumAdapterException e) {}
 		}
 		return dataCollection;
 	}

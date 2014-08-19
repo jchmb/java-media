@@ -27,4 +27,8 @@ public class SimpleAggregateMediumAdapter<T extends Entity> implements Aggregate
 		adapters.add(adapter);
 		return this;
 	}
+	
+	public void clear() {
+		adapters.clear();
+	}
 }
