@@ -12,8 +12,12 @@ public abstract class DefaultArticleMediumAdapter extends IteratingJerryMediumAd
 	protected Data getData(Jerry element) throws MediumAdapterException {
 		Data data = new DefaultData();
 		data.put("title", element.html());
-		data.put("url", element.attr("href"));
+		data.put("url", parseURL(element.attr("href")));
 		return data;
+	}
+	
+	protected String parseURL(String url) {
+		return url;
 	}
 	
 	@Override
