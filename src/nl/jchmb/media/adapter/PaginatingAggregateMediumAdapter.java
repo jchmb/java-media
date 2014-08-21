@@ -4,7 +4,7 @@ import nl.jchmb.media.entity.Entity;
 
 public interface PaginatingAggregateMediumAdapter<T extends Entity> 
 		extends AggregateMediumAdapter<T> {
-	public void setPaginatingMediumAdapterClass(Class<PaginatingMediumAdapter<T>> paginatingMediumAdapterClass);
+	public <U extends PaginatingMediumAdapter<T>> void setPaginatingMediumAdapterClass(Class<U> paginatingMediumAdapterClass);
 	public void setRange(int pageFrom, int pageTo);
 	public void setRange(int pageTo);
 }

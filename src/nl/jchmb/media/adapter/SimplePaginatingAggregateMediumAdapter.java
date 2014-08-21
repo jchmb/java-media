@@ -5,7 +5,7 @@ import nl.jchmb.media.entity.Entity;
 public class SimplePaginatingAggregateMediumAdapter<T extends Entity> 
 		extends SimpleAggregateMediumAdapter<T>
 		implements PaginatingAggregateMediumAdapter<T> {
-	private Class<PaginatingMediumAdapter<T>> paginatingMediumAdapterClass;
+	private Class<? extends PaginatingMediumAdapter<T>> paginatingMediumAdapterClass;
 	private int pageFrom, pageTo;
 	
 	public SimplePaginatingAggregateMediumAdapter() {
@@ -13,8 +13,8 @@ public class SimplePaginatingAggregateMediumAdapter<T extends Entity>
 	}
 
 	@Override
-	public void setPaginatingMediumAdapterClass(
-			Class<PaginatingMediumAdapter<T>> paginatingMediumAdapterClass) {
+	public <U extends PaginatingMediumAdapter<T>> void setPaginatingMediumAdapterClass(
+			Class<U> paginatingMediumAdapterClass) {
 		this.paginatingMediumAdapterClass = paginatingMediumAdapterClass;
 		clear();
 		update();
